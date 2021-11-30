@@ -1,0 +1,6 @@
+﻿  HunterCrispProj2.cpp
+C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj2\HunterCrispProj2.cpp(185,31): warning C4244: '+=': conversion from 'double' to 'int', possible loss of data
+C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj2\HunterCrispProj2.cpp(248,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj2\HunterCrispProj2.cpp(266,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj2\HunterCrispProj2.cpp(363,23): warning C4018: '<': signed/unsigned mismatch
+  HunterCrispProj2.vcxproj -> C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj2\Debug\HunterCrispProj2.exe

@@ -1,0 +1,142 @@
+Microsoft (R) Macro Assembler Version 14.29.30133.0	    09/07/21 18:51:24
+HunterCrispProj3.asm					     Page 1 - 1
+
+
+				;// Project 3 First MASM Program
+				.386 
+				.model flat,stdcall 
+				.stack 4096 
+				ExitProcess PROTO, dwExitCode:DWORD 
+
+ = "January",0			JAN EQU <"January",0>
+ = "February",0			FEB EQU <"February",0>
+ = "March",0			MAR EQU <"March",0>
+ = "April",0			APR EQU <"April",0>
+
+ 00000000			.data 
+					;// declare variables here
+ = 00000001			mon = 1
+ = 00000002			tue = 2
+ = 00000003			wed = 3
+ = 00000004			thu = 4
+ = 00000005			fri = 5
+ = 00000006			sat = 6
+ = 00000007			sun = 7
+
+ 00000000 00000001		week DWORD mon, tue, wed, thu, fri, sat, sun
+	   00000002
+	   00000003
+	   00000004
+	   00000005
+	   00000006
+	   00000007
+
+ 0000001C 0F			val1 BYTE 15
+ 0000001D F1			val2 SBYTE -15
+ 0000001E 2710			val3 WORD 10000
+ 00000020 D8F0			val4 SWORD -10000
+ 00000022 00200000		val5 DWORD 200000h
+ 00000026 FFFCF2C0		val6 SDWORD -200000
+ 0000002A			val7 QWORD 1234567812345678h
+	   1234567812345678
+ 00000032			val8 TBYTE 80000000000000001234h
+	   80000000000000001234
+ 0000003C C0A9999A		val9 REAL4 -5.3
+ 00000040			val10 REAL8 1.3E+200
+	   697B2C6D1897FFDC
+ 00000048			val11 REAL10 2.1E+3900
+	   729BC0AA8977EEB799CD
+
+ 00000052 4A 61 6E 75 61	month1 BYTE JAN
+	   72 79 00
+ 0000005A 46 65 62 72 75	month2 BYTE FEB
+	   61 72 79 00
+ 00000063 4D 61 72 63 68	month3 BYTE MAR
+	   00
+ 00000069 41 70 72 69 6C	month4 BYTE APR
+	   00
+
+ 00000000			.code 
+ 00000000			main PROC 
+					;// write your code here
+ 00000000  B8 00000005			mov eax,5
+ 00000005  BB 00000006			mov ebx,6
+ 0000000A  B9 00000004			mov ecx,4
+ 0000000F  BA 00000003			mov edx,3
+
+ 00000014  03 C3			add eax,ebx
+ 00000016  03 CA			add ecx,edx
+ 00000018  2B C1			sub eax,ecx
+
+					INVOKE ExitProcess,0 
+ 0000001A  6A 00	   *	    push   +000000000h
+ 0000001C  E8 00000000 E   *	    call   ExitProcess
+ 00000021			main ENDP 
+				END main
+Microsoft (R) Macro Assembler Version 14.29.30133.0	    09/07/21 18:51:24
+HunterCrispProj3.asm					     Symbols 2 - 1
+
+
+
+
+Segments and Groups:
+
+                N a m e                 Size     Length   Align   Combine Class
+
+FLAT . . . . . . . . . . . . . .	GROUP
+STACK  . . . . . . . . . . . . .	32 Bit	 00001000 DWord	  Stack	  'STACK'	 
+_DATA  . . . . . . . . . . . . .	32 Bit	 0000006F DWord	  Public  'DATA'	
+_TEXT  . . . . . . . . . . . . .	32 Bit	 00000021 DWord	  Public  'CODE'	
+
+
+Procedures, parameters, and locals:
+
+                N a m e                 Type     Value    Attr
+
+ExitProcess  . . . . . . . . . .	P Near	 00000000 FLAT	Length= 00000000 External STDCALL
+main . . . . . . . . . . . . . .	P Near	 00000000 _TEXT	Length= 00000021 Public STDCALL
+
+
+Symbols:
+
+                N a m e                 Type     Value    Attr
+
+@CodeSize  . . . . . . . . . . .	Number	 00000000h   
+@DataSize  . . . . . . . . . . .	Number	 00000000h   
+@Interface . . . . . . . . . . .	Number	 00000003h   
+@Model . . . . . . . . . . . . .	Number	 00000007h   
+@code  . . . . . . . . . . . . .	Text   	 _TEXT
+@data  . . . . . . . . . . . . .	Text   	 FLAT
+@fardata?  . . . . . . . . . . .	Text   	 FLAT
+@fardata . . . . . . . . . . . .	Text   	 FLAT
+@stack . . . . . . . . . . . . .	Text   	 FLAT
+APR  . . . . . . . . . . . . . .	Text   	 "April",0
+FEB  . . . . . . . . . . . . . .	Text   	 "February",0
+JAN  . . . . . . . . . . . . . .	Text   	 "January",0
+MAR  . . . . . . . . . . . . . .	Text   	 "March",0
+fri  . . . . . . . . . . . . . .	Number	 00000005h   
+month1 . . . . . . . . . . . . .	Byte	 00000052 _DATA	
+month2 . . . . . . . . . . . . .	Byte	 0000005A _DATA	
+month3 . . . . . . . . . . . . .	Byte	 00000063 _DATA	
+month4 . . . . . . . . . . . . .	Byte	 00000069 _DATA	
+mon  . . . . . . . . . . . . . .	Number	 00000001h   
+sat  . . . . . . . . . . . . . .	Number	 00000006h   
+sun  . . . . . . . . . . . . . .	Number	 00000007h   
+thu  . . . . . . . . . . . . . .	Number	 00000004h   
+tue  . . . . . . . . . . . . . .	Number	 00000002h   
+val10  . . . . . . . . . . . . .	QWord	 00000040 _DATA	
+val11  . . . . . . . . . . . . .	TByte	 00000048 _DATA	
+val1 . . . . . . . . . . . . . .	Byte	 0000001C _DATA	
+val2 . . . . . . . . . . . . . .	Byte	 0000001D _DATA	
+val3 . . . . . . . . . . . . . .	Word	 0000001E _DATA	
+val4 . . . . . . . . . . . . . .	Word	 00000020 _DATA	
+val5 . . . . . . . . . . . . . .	DWord	 00000022 _DATA	
+val6 . . . . . . . . . . . . . .	DWord	 00000026 _DATA	
+val7 . . . . . . . . . . . . . .	QWord	 0000002A _DATA	
+val8 . . . . . . . . . . . . . .	TByte	 00000032 _DATA	
+val9 . . . . . . . . . . . . . .	DWord	 0000003C _DATA	
+wed  . . . . . . . . . . . . . .	Number	 00000003h   
+week . . . . . . . . . . . . . .	DWord	 00000000 _DATA	
+
+	   0 Warnings
+	   0 Errors

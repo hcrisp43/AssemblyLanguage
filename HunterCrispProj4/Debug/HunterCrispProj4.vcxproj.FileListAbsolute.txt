@@ -1,0 +1,2 @@
+C:\Users\Hunter\Desktop\CSCI 321\HunterCrispProj4\Debug\HunterCrispProj4.exe
+C:\Users\Hunter\Desktop\CSCI 321\AssemblyLanguage\HunterCrispProj4\Debug\HunterCrispProj4.exe
